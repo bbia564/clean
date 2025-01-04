@@ -11,8 +11,8 @@ class CleaningLineView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.zieme.value
-              ? const CircularProgressIndicator(color: Colors.black)
+          () => controller.stehr.value
+              ? const CircularProgressIndicator(color: Colors.green)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class CleaningLineView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.knle();
+              controller.ogtec();
             },
             icon: const Icon(
               Icons.restart_alt,

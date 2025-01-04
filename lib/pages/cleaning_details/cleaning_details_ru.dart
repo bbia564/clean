@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import '../cleaning_line/cleaning_line_logic.dart';
 
-class DorainApl extends GetView<PageLogic>{
-  const DorainApl({super.key});
+class CleaningDetailsRu extends GetView<PageLogic>{
+  const CleaningDetailsRu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class DorainApl extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.glqe.value)),
+              url: WebUri.uri(Uri.parse(controller.qgiutd.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

@@ -2,9 +2,12 @@ import 'package:cleaning_plan/db_cleaning/db_cleaning.dart';
 import 'package:cleaning_plan/pages/cleaning_add/cleaning_add_binding.dart';
 import 'package:cleaning_plan/pages/cleaning_add/cleaning_add_view.dart';
 import 'package:cleaning_plan/pages/cleaning_details/cleaning_details_binding.dart';
+import 'package:cleaning_plan/pages/cleaning_details/cleaning_details_ru.dart';
 import 'package:cleaning_plan/pages/cleaning_details/cleaning_details_view.dart';
 import 'package:cleaning_plan/pages/cleaning_first/cleaning_first_binding.dart';
 import 'package:cleaning_plan/pages/cleaning_first/cleaning_first_view.dart';
+import 'package:cleaning_plan/pages/cleaning_line/cleaning_line_binding.dart';
+import 'package:cleaning_plan/pages/cleaning_line/cleaning_line_view.dart';
 import 'package:cleaning_plan/pages/cleaning_second/cleaning_second_binding.dart';
 import 'package:cleaning_plan/pages/cleaning_second/cleaning_second_view.dart';
 import 'package:cleaning_plan/pages/cleaning_tab/cleaning_tab_binding.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Cleans,
-      initialRoute: '/cleaningTab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -91,9 +94,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Cleans = [
+  GetPage(name: '/', page: () => const CleaningLineView(), binding: CleaningLineBinding()),
   GetPage(name: '/cleaningTab', page: () => CleaningTabPage(), binding: CleaningTabBinding()),
   GetPage(name: '/cleaningFirst', page: () => CleaningFirstPage(), binding: CleaningFirstBinding()),
-  GetPage(name: '/cleaningSecond', page: () => CleaningSecondPage(), binding: CleaningSecondBinding()),
+  GetPage(name: '/cleaningFirst', page: () => CleaningFirstPage(), binding: CleaningFirstBinding()),
+  GetPage(name: '/cleaningEat', page: () => const CleaningDetailsRu()),
   GetPage(name: '/cleaningDetails', page: () => CleaningDetailsPage(), binding: CleaningDetailsBinding()),
   GetPage(name: '/cleaningAdd', page: () => CleaningAddPage(), binding: CleaningAddBinding()),
 ];
